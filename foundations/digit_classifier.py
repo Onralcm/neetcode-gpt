@@ -16,9 +16,4 @@ class Solution(nn.Module):
         torch.manual_seed(0)
         # images shape: (batch_size, 784)
         # Return the model's prediction to 4 decimal places
-        predictions = []
-        for i in range(images.size(0)):
-            out = torch.round(self.model(images[i, :].flatten()), decimals=4)
-            predictions.append(out)
-
-        return torch.stack(predictions)
+        return torch.round(self.model(images), decimals=4)
