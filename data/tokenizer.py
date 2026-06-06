@@ -19,8 +19,11 @@ class Solution:
                     freq[(char_list[i], char_list[i+1])] = 0
                 freq[(char_list[i], char_list[i+1])]+=1
 
+            if not freq:     
+                break
+
             mx = 0
-            mx_pair = ('', '')
+            mx_pair = None
             for pair, count in freq.items():
                 if count > mx:
                     mx = count
